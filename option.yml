@@ -1,6 +1,6 @@
 
 dir_rule:
-  base_dir: \tmp
+  base_dir: /tmp
   rule: Bd_Pname
 download:
   cache: true
@@ -27,7 +27,7 @@ plugins:
     # 配置到after_album时，需要修改filename_rule参数，不能写Pxx只能写Axx示例如下
     - plugin: img2pdf
       kwargs:
-        pdf_dir: \tmp\pdf # pdf存放文件夹
+        pdf_dir: /tmp/pdf # pdf存放文件夹
         filename_rule: Aid # pdf命名规则，A代表album, name代表使用album.name也就是本子名称
 
 
