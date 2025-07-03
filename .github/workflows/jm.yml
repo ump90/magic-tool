@@ -23,7 +23,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install jmcomic img2pdf
+        pip install jmcomic img2pdf && pip install psutil
 
     - name: mkdir 
       run: |
