@@ -44,9 +44,4 @@ jobs:
     - name: upload file
       run: |
         wormhole-cli /tmp/pdf/${{ github.event.inputs.album_id }}.pdf > /tmp/upload.log && cat /tmp/upload.log
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: final-result
-        path: /tmp/upload.log
     
