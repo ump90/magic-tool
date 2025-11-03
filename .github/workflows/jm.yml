@@ -33,7 +33,7 @@ jobs:
         python jm.py ${{ github.event.inputs.album_id }} option.yml
     - name: Install wormhole
       run: |
-        git clone https://github.com/Mimickal/wormhole-cli.git && cd wormhole-cli && npm ci && npm install -g
+        cd /tmp && git clone https://github.com/Mimickal/wormhole-cli.git && cd wormhole-cli && npm ci && npm install -g
     - name: Set up rclone
       uses: AnimMouse/setup-rclone@v1    
       with:
