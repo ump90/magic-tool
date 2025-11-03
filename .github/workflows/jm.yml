@@ -31,9 +31,6 @@ jobs:
     - name: Run download script
       run: |
         python jm.py ${{ github.event.inputs.album_id }} option.yml
-    - name: Install wormhole
-      run: |
-        git clone https://github.com/Mimickal/wormhole-cli.git && cd wormhole-cli && npm ci && npm install -g
     - name: Set up rclone
       uses: AnimMouse/setup-rclone@v1    
       with:
@@ -41,7 +38,3 @@ jobs:
     - name: mv file
       run: |
         rclone copy --ignore-existing --progress /tmp/pdf/${{ github.event.inputs.album_id }}.pdf onedrive:PDF/
-    - name: upload file
-      run: |
-        wormhole-cli /tmp/pdf/${{ github.event.inputs.album_id }}.pdf > /tmp/upload.log && cat /tmp/upload.log
-    
